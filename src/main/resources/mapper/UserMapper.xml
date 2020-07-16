@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.codeeyes.mojito.mapper.UserMapper">
+<sql id="base_list">
+id,real_name,password,mobile,email,nick_name,mobile_flag,email_flag,create_time,update_time
+</sql>
+
+  <insert id="insert" useGeneratedKeys="true" keyProperty="id">
+    insert into user(email,password)
+    values (#{email,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR})
+  </insert>
+  <select id="findByEamil" resultType="cn.codeeyes.mojito.model.entity.UserDO">
+    select  <include refid="base_list"></include>
+    from user
+    where email=#{email}
+  </select>
+</mapper>
