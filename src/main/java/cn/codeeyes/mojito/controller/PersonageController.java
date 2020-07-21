@@ -1,6 +1,7 @@
 package cn.codeeyes.mojito.controller;
 
 import cn.codeeyes.mojito.model.common.ResponseMsg;
+import cn.codeeyes.mojito.model.dto.PersonDTO;
 import cn.codeeyes.mojito.model.dto.PersonSearchDTO;
 import cn.codeeyes.mojito.service.HotSearchService;
 import cn.codeeyes.mojito.service.PersonageService;
@@ -33,7 +34,7 @@ public class PersonageController {
 
   @ApiOperation(value = "搜索", httpMethod = "POST", produces = "application/json")
   @ApiResponses(value = {
-      @ApiResponse(code = 200, message = "success", response = PersonSearchDTO.class, responseContainer = "List")})
+      @ApiResponse(code = 200, message = "success", response = PersonDTO.class, responseContainer = "List")})
   @PostMapping("/search")
   @ResponseBody
   public ResponseMsg<?> search(@RequestBody PersonSearchDTO searchDTO) {

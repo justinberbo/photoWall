@@ -40,4 +40,6 @@ springfox:
 
 server:
   #  端口号
-  port: 8080
+#  port: 8080
+#  服务器端口
+  port: 8091
