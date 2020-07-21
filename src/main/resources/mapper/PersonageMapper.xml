@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.codeeyes.mojito.mapper.PersonageMapper">
+
+
+  <select id="selectByCondition" resultType="cn.codeeyes.mojito.model.dto.PersonDTO">
+    select id,name,avatar,type,category,company from personage
+    where name like '%${condition}%' or company like '%${condition}%' or type like '%${condition}%'
+    or category like '%${condition}%'
+  </select>
+</mapper>

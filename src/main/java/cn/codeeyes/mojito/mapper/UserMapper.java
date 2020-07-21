@@ -16,5 +16,16 @@ public interface UserMapper {
    */
   void insert(UserDO userDO);
 
-  UserDO findByEamil(String email);
+  /**
+   * 通过email查找用户
+   * @param email
+   * @return
+   */
+  UserDO findByEmail(String email);
+
+  /**
+   * 更新用户信息
+   * @param userDO
+   */
+  void update(UserDO userDO);
 }

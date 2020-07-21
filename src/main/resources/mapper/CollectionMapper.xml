@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cn.codeeyes.mojito.mapper.CollectionMapper">
+
+
+  <select id="getCollection" resultType="cn.codeeyes.mojito.model.entity.CollectionDO">
+    select id,author,img_index,img_url1,img_url2,img_url3,img_url4,img_url5,img_url6,img_url7,img_url8,
+    create_time,update_time from collection
+  </select>
+</mapper>

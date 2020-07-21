@@ -7,17 +7,21 @@ import lombok.Data;
 
 /**
  * @author codeeyes.cn
- * @date 2020/7/11 16:32
+ * @date 2020/7/20 17:27
  */
 @Data
-@ApiModel
-public class LoginDTO {
+@ApiModel(value = "用户信息修改dto")
+public class ModifyUserDTO {
+
+  @ApiModelProperty(value = "用户id")
+  private Long id;
+
+  @ApiModelProperty(value = "用户昵称")
+  private String nikeName;
 
   @ApiModelProperty(value = "邮箱")
-  @NotBlank(message = "邮箱不能为空")
   private String email;
 
-  @ApiModelProperty(value = "密码")
-  @NotBlank(message = "密码不能为空")
-  private String password;
+  @ApiModelProperty(value = "手机")
+  private String mobile;
 }

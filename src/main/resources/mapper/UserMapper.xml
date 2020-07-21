@@ -9,7 +9,22 @@ id,real_name,password,mobile,email,nick_name,mobile_flag,email_flag,create_time,
     insert into user(email,password)
     values (#{email,jdbcType=VARCHAR},#{password,jdbcType=VARCHAR})
   </insert>
-  <select id="findByEamil" resultType="cn.codeeyes.mojito.model.entity.UserDO">
+  <update id="update">
+    update user
+    <set>
+      <if test="email !=null and email !=''">
+        email=#{email},
+      </if>
+      <if test="nickName !=null and nickName !=''">
+        nick_name=#{nickName},
+      </if>
+      <if test="mobile !=null and mobile !=''">
+        mobile=#{mobile},
+      </if>
+      update_time=now();
+    </set>
+  </update>
+  <select id="findByEmail" resultType="cn.codeeyes.mojito.model.entity.UserDO">
     select  <include refid="base_list"></include>
     from user
     where email=#{email}

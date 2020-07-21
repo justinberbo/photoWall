@@ -3,31 +3,37 @@ package cn.codeeyes.mojito.common;
 import cn.codeeyes.mojito.common.model.IErrorCode;
 
 /**
- * 系统业务异常
+ * 系统异常
  *
- * @author zhaoc
+ * @author www.codeeyes.cn
  */
 public class SysException extends RuntimeException {
 
-    private static final long serialVersionUID = 1L;
+  private static final long serialVersionUID = 1L;
 
-    private IErrorCode errorCode;
+  private IErrorCode errorCode;
 
-    public SysException(IErrorCode errorCode) {
-        super(errorCode.toString());
-        this.errorCode = errorCode;
-    }
+  public SysException(IErrorCode errorCode) {
+    super(errorCode.toString());
+    this.errorCode = errorCode;
+  }
 
-    public IErrorCode getErrorCode() {
-        return errorCode;
-    }
+  public IErrorCode getErrorCode() {
+    return errorCode;
+  }
 
-    public void setErrorCode(IErrorCode errorCode) {
-        this.errorCode = errorCode;
-    }
+  public void setErrorCode(IErrorCode errorCode) {
+    this.errorCode = errorCode;
+  }
 
-    @Override
-    public String toString() {
-        return errorCode.getCode();
-    }
+  @Override
+  public String toString() {
+    return errorCode.getCode();
+  }
+
+  @Override
+  public String getMessage() {
+    return errorCode.getDesc();
+  }
+
 }

@@ -6,10 +6,11 @@ import cn.codeeyes.mojito.common.model.IErrorCode;
  * @author codeeyes.cn
  * @date 2020/7/12 16:58
  */
-public enum CommonError  implements IErrorCode {
-  USER_NO_FIND("1001","用户不存在"),
+public enum CommonError implements IErrorCode {
+  USER_NO_FIND("1001", "用户不存在"),
   USER_PWD_ERROR("1002", "用户名密码错误"),
-  ;
+  EMAIL_IS_REGISTER("1003", "邮箱已注册"),
+  UUID_NO_FIND("1004", "没有查到用户信息，用户登入信息过期，请重新登入");
 
   private String code;
 
@@ -38,16 +39,6 @@ public enum CommonError  implements IErrorCode {
   @Override
   public void setDesc(String desc) {
     this.desc = desc;
-  }
-
-  @Override
-  public String[] getParams() {
-    return new String[0];
-  }
-
-  @Override
-  public void setParams(String[] params) {
-
   }
 
   @Override

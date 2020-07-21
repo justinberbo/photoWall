@@ -1,6 +1,7 @@
 package cn.codeeyes.mojito.model.dto;
 
 import java.util.Date;
+import java.util.UUID;
 import lombok.Data;
 
 /**
@@ -9,6 +10,8 @@ import lombok.Data;
  */
 @Data
 public class UserDTO {
+
+  private UUID uuid;
   private Long id;
   private String nickName;
   private String password;

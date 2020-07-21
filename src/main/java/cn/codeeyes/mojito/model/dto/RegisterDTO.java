@@ -19,7 +19,6 @@ public class RegisterDTO {
   private String email;
 
   @ApiModelProperty(value = "密码")
-  @NotBlank
   @NotBlank(message = "密码不能为空")
   private String password;
 }

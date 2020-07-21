@@ -5,6 +5,9 @@ package cn.codeeyes.mojito.common;
  * @date 2020/7/12 18:22
  */
 public interface RedisConstant {
-String USER_LOGIN_FLAG="#user_login";
+
+  String USER_LOGIN_FLAG = "#user#";
+
+  String HOT_SEARCH = "#hot#";
 
 }
