@@ -21,7 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @date 2020/7/17 19:26
  */
 
-@Api(value = "account service API", description = "人物管理接口")
+@Api(value = "API", description = "人物管理接口")
 @Controller
 public class PersonageController {
 
@@ -40,7 +40,7 @@ public class PersonageController {
     return ResponseMsg.buildSuccess(personageService.findPersonage(searchDTO));
   }
 
-  @ApiOperation(value = "获取搜索热门", httpMethod = "POST", produces = "application/json")
+  @ApiOperation(value = "获取搜索热门", httpMethod = "GET", produces = "application/json")
   @GetMapping("hotSearch")
   @ResponseBody
   public ResponseMsg<?> getHot() {

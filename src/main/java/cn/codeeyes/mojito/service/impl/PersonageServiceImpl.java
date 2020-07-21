@@ -34,6 +34,7 @@ public class PersonageServiceImpl implements PersonageService {
     HotSearch hotSearch = hotSearchService.findByTitle(search);
 
     if (null == hotSearch) {
+      hotSearch=new HotSearch();
       hotSearch.setId(RandomUtil.uid());
       hotSearch.setTitle(search);
       hotSearch.setCount(1);

@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @version 1.0
  * @date 2019/11/24 6:17 下午
  */
-@Api(value = "account service API", description = "账号管理接口")
+@Api(value = "API", description = "账号管理接口")
 @Controller
 public class UserController {
 

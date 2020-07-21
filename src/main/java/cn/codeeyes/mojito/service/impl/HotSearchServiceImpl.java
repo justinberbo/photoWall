@@ -77,8 +77,9 @@ public class HotSearchServiceImpl implements HotSearchService {
 
     listHotSearch.sort(new Comparator<HotSearch>() {
       @Override
+      //从大到小
       public int compare(HotSearch o1, HotSearch o2) {
-        return o1.getCount() - o2.getCount();
+        return o2.getCount() - o1.getCount();
       }
     });
 
@@ -88,8 +89,9 @@ public class HotSearchServiceImpl implements HotSearchService {
 //    listHot.add(listHotSearch.get(2).getTitle());
 //    listHot.add(listHotSearch.get(3).getTitle());
 //    listHot.add(listHotSearch.get(4).getTitle());
-
+//    System.out.println(listHotSearch);
     listHotSearch.forEach(hotSearch -> {
+
       listHot.add(hotSearch.getTitle());
     });
 
