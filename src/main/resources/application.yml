@@ -37,7 +37,7 @@ springfox:
   swagger:
    v2:
 #    host: localhost:80/api
-     host: 47.103.218.59:80/api
+     host: 47.103.218.59:81/api
 
 
 server:
