@@ -44,7 +44,7 @@ server:
   #  端口号
 #  port: 8080
 
-  服务器配置
+#  服务器配置
   port: 8091
   servlet:
     context-path: /photoWall
