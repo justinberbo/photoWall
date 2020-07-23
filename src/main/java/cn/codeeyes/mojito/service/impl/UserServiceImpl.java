@@ -62,7 +62,7 @@ public class UserServiceImpl implements UserService {
     UUID uid=UUID.randomUUID();
     UserDTO userDTO=new UserDTO();
     BeanUtils.copyProperties(userMapper.findByEmail(userDO.getEmail()), userDTO);
-    redisUtil.set(RedisConstant.USER_LOGIN_FLAG+uid,JSON.toJSON(userDTO),LOGIN_TIME_OUT);
+    redisUtil.set(RedisConstant.USER_LOGIN_FLAG+uid,JSON.toJSON(userDTO).toString(),LOGIN_TIME_OUT);
 
     return uid;
 
@@ -113,5 +113,26 @@ public class UserServiceImpl implements UserService {
     userDO.setNickName(modifyDTO.getNikeName());
     userDO.setMobile(modifyDTO.getMobile());
     userMapper.update(userDO);
+  }
+
+  @Override
+  public void addCount() {
+    Object redisObj=redisUtil.get(RedisConstant.COUNT);
+    Integer count=0;
+    if (null!=redisObj) {
+      count = Integer.parseInt(redisObj.toString())+1;
+      redisUtil.del(RedisConstant.COUNT);
+      redisUtil.set(RedisConstant.COUNT,count.toString());
+    }
+  }
+
+  @Override
+  public Integer getCount() {
+    Integer count=0;
+    Object redisObj=redisUtil.get(RedisConstant.COUNT);
+    if (null!=redisObj) {
+      count= Integer.parseInt(redisObj.toString());
+    }
+    return count;
   }
 }

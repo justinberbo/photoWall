@@ -42,9 +42,16 @@ public class PersonageController {
   }
 
   @ApiOperation(value = "获取搜索热门", httpMethod = "GET", produces = "application/json")
-  @GetMapping("hotSearch")
+  @GetMapping("/hotSearch")
   @ResponseBody
   public ResponseMsg<?> getHot() {
     return ResponseMsg.buildSuccess(hotSearchService.getHotSearch());
+  }
+  @ApiOperation(value = "获取人物图集", httpMethod = "GET", produces = "application/json")
+  @GetMapping ("/getImg")
+  @ResponseBody
+  public ResponseMsg<?> getIMg(String name) {
+    System.out.println(name);
+    return ResponseMsg.buildSuccess(hotSearchService.getImgList(name));
   }
 }

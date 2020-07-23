@@ -10,4 +10,5 @@ public interface RedisConstant {
 
   String HOT_SEARCH = "#hot#";
 
+  String COUNT="#count#";
 }

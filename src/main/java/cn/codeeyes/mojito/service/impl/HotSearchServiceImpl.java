@@ -1,7 +1,9 @@
 package cn.codeeyes.mojito.service.impl;
 
 import cn.codeeyes.mojito.common.RedisConstant;
+import cn.codeeyes.mojito.mapper.ImgListMapper;
 import cn.codeeyes.mojito.model.entity.HotSearch;
+import cn.codeeyes.mojito.model.entity.ImgListDO;
 import cn.codeeyes.mojito.service.HotSearchService;
 import cn.codeeyes.mojito.util.RedisUtil;
 import java.text.CollationKey;
@@ -27,6 +29,8 @@ public class HotSearchServiceImpl implements HotSearchService {
   private MongoTemplate mongoTemplate;
   @Resource
   private RedisUtil redisUtil;
+  @Resource
+   private ImgListMapper imgListMapper;
 
   @Override
   public void save(HotSearch hotSearch) {
@@ -96,5 +100,30 @@ public class HotSearchServiceImpl implements HotSearchService {
     });
 
     return listHot;
+  }
+
+  @Override
+  public List<String> getImgList(String name) {
+
+    ImgListDO imgListDO=imgListMapper.getImgByName(name);
+    List<String>listImg=new ArrayList<>();
+    if (null!=imgListDO) {
+      if(null!=imgListDO.getUrl1()) {
+        listImg.add(imgListDO.getUrl1());
+      }
+      if(null!=imgListDO.getUrl2()) {
+        listImg.add(imgListDO.getUrl2());
+      }
+      if(null!=imgListDO.getUrl3()) {
+        listImg.add(imgListDO.getUrl3());
+      }
+      if(null!=imgListDO.getUrl4()) {
+        listImg.add(imgListDO.getUrl4());
+      }
+      if(null!=imgListDO.getUrl5()) {
+        listImg.add(imgListDO.getUrl5());
+      }
+    }
+    return listImg;
   }
 }

@@ -46,4 +46,15 @@ public interface UserService {
    * @param modifyUserDTO
    */
   void modify(ModifyUserDTO modifyUserDTO);
+
+  /**
+   * 添加访问次数
+   */
+  void addCount();
+
+  /**
+   * 查询访问次数
+   * @return
+   */
+  Integer getCount();
 }

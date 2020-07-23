@@ -26,4 +26,11 @@ public interface HotSearchService {
    * @return
    */
   List<String> getHotSearch();
+
+  /**
+   * 获取人物图
+   * @param id
+   * @return
+   */
+  List<String>getImgList(String id);
 }
