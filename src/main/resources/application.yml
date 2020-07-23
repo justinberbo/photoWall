@@ -32,12 +32,12 @@ logging:
   level:
     ssm.app.mapper : debug
 
-#springfox:
-# documentation:
-#  swagger:
-#   v2:
+springfox:
+ documentation:
+  swagger:
+   v2:
 #    host: localhost:80/api
-##     host: 47.103.218.59:81/api
+     host: 47.103.218.59:81/api
 
 
 server:
@@ -46,5 +46,5 @@ server:
 
 #  服务器配置
   port: 8091
-  servlet:
-    context-path: /photoWall
+#  servlet:
+#    context-path: /photoWall
