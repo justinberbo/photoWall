@@ -1,5 +1,10 @@
-
 spring:
+ profiles:
+   active: dev
+---
+#线上环境
+spring:
+  profiles: dev
   datasource:
     password: zhuang1996
     username: zhuang
@@ -36,15 +41,9 @@ springfox:
  documentation:
   swagger:
    v2:
-#    host: localhost:80/api
-     host: 47.103.218.59:81/api
+     host: www.codeeyes.cn:/api
 
-
-server:
-  #  端口号
-#  port: 8080
-
-#  服务器配置
-  port: 8091
-#  servlet:
-#    context-path: /photoWall
+---
+#测试环境
+spring:
+ profiles: test

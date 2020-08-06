@@ -1,5 +1,4 @@
 package cn.codeeyes.mojito.controller;
-
 import cn.codeeyes.mojito.model.common.ResponseMsg;
 import cn.codeeyes.mojito.model.dto.CollectionDTO;
 import cn.codeeyes.mojito.service.CollectionService;
@@ -8,16 +7,14 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import javax.annotation.Resource;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @author codeeyes.cn
  * @date 2020/7/20 22:18
  */
-@Controller
+@RestController
 @Api(description="图片集合")
 public class CollectionController {
 
@@ -28,7 +25,6 @@ public class CollectionController {
   @ApiResponses(value = {
       @ApiResponse(code = 200, message = "success", response = CollectionDTO.class, responseContainer = "List")})
   @GetMapping("/getCollection")
-  @ResponseBody
   public ResponseMsg<?> getCollection() {
     return ResponseMsg.buildSuccess(collectionService.getCollection());
   }
