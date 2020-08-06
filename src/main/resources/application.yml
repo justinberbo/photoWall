@@ -42,7 +42,9 @@ springfox:
   swagger:
    v2:
      host: www.codeeyes.cn:/api
-
+server:
+  #端口号
+  port: 8091
 ---
 #测试环境
 spring:
